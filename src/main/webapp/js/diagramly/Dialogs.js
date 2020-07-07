@@ -4438,10 +4438,11 @@ var ImageDialog = function(editorUi, title, initialValue, fn, ignoreExisting, co
 			    		}
 			    	}, true);
 					
-		    		// Resets input to force change event for same file (type reset required for IE)
-					fileInput.type = '';
-					fileInput.type = 'file';
-					fileInput.value = '';
+					// Resets input to force change event for same file (type reset required for IE)
+
+					document.body.removeChild(fileInput);
+					editorUi.imgDlgFileInputElt = null;
+
 				}
 			});
 			

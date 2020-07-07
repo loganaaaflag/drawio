@@ -7,7 +7,7 @@ if (workbox) {
   workbox.precaching.precacheAndRoute([
     {
       "url": `${DIAGRAM_APP_ROOT_DIR}js/app.min.js`,
-      "revision": "155c9b79a191113daecc414c9a898328"
+      "revision": "520670ff5a7057da866cabdf87eb8166"
     },
     {
       "url": `${DIAGRAM_APP_ROOT_DIR}js/extensions.min.js`,
@@ -15,7 +15,7 @@ if (workbox) {
     },
     {
       "url": `${DIAGRAM_APP_ROOT_DIR}js/stencils.min.js`,
-      "revision": "a6620368de26b57e1a60f45f470a9e87"
+      "revision": "0dd8ac7f33e59f1850b9763dfa104c8d"
     },
     {
       "url": `${DIAGRAM_APP_ROOT_DIR}js/shapes.min.js`,
