@@ -468,11 +468,11 @@ if (self.workbox) {
       "revision": "83a43717b284902442620f61bc4e9fa6"
     },
     {
-      "url": `${self.DIAGRAM_APP_ROOT_DIR}/js/PreConfig.js`,
+      "url": `${self.DIAGRAM_APP_ROOT_DIR}js/PreConfig.js`,
       "revision": "93cf116a5f5c25754075278e1bb69da2"
     },
     {
-      "url": `${self.DIAGRAM_APP_ROOT_DIR}/js/PostConfig.js`,
+      "url": `${self.DIAGRAM_APP_ROOT_DIR}js/PostConfig.js`,
       "revision": "e544561650f9f94440a1ef1d186f25c8"
     }
   ],
