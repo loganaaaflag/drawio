@@ -4409,51 +4409,57 @@ var ImageDialog = function(editorUi, title, initialValue, fn, ignoreExisting, co
 
 	if (Graph.fileSupport)
 	{
-		if (editorUi.imgDlgFileInputElt == null)
-		{
-			var fileInput = document.createElement('input');
-			fileInput.setAttribute('multiple', 'multiple');
-			fileInput.setAttribute('type', 'file');
-			
-			mxEvent.addListener(fileInput, 'change', function(evt)
+
+		var _buildDlgFileInput = function() {
+
+			if (editorUi.imgDlgFileInputElt == null)
 			{
-				if (fileInput.files != null)
+				var fileInput = document.createElement('input');
+				fileInput.setAttribute('multiple', 'multiple');
+				fileInput.setAttribute('type', 'file');
+				
+				mxEvent.addListener(fileInput, 'change', function(evt)
 				{
-					editorUi.importFiles(fileInput.files, 0, 0, editorUi.maxImageSize, function(data, mimeType, x, y, w, h)
-			    	{
-			    		apply(data);
-			    	}, function()
-			    	{
-			    		// No post processing
-			    	}, function(file)
-			    	{
-			    		// Handles only images
-			    		return file.type.substring(0, 6) == 'image/';
-			    	}, function(queue)
-			    	{
-			    		// Invokes elements of queue in order
-			    		for (var i = 0; i < queue.length; i++)
-			    		{
-			    			queue[i]();
-			    		}
-			    	}, true);
-					
-					// Resets input to force change event for same file (type reset required for IE)
+					if (fileInput.files != null)
+					{
+						editorUi.importFiles(fileInput.files, 0, 0, editorUi.maxImageSize, function(data, mimeType, x, y, w, h)
+						{
+							apply(data);
+						}, function()
+						{
+							// No post processing
+						}, function(file)
+						{
+							// Handles only images
+							return file.type.substring(0, 6) == 'image/';
+						}, function(queue)
+						{
+							// Invokes elements of queue in order
+							for (var i = 0; i < queue.length; i++)
+							{
+								queue[i]();
+							}
+						}, true);
+						
+						// Resets input to force change event for same file (type reset required for IE)
+						document.body.removeChild(fileInput);
+						editorUi.imgDlgFileInputElt = null;
+	
+					}
+				});
+				
+				fileInput.style.display = 'none';
+				document.body.appendChild(fileInput);
+				editorUi.imgDlgFileInputElt = fileInput;
+			}
 
-					document.body.removeChild(fileInput);
-					editorUi.imgDlgFileInputElt = null;
+			return editorUi.imgDlgFileInputElt;
 
-				}
-			});
-			
-			fileInput.style.display = 'none';
-			document.body.appendChild(fileInput);
-			editorUi.imgDlgFileInputElt = fileInput;
 		}
-		
+
 		var btn = mxUtils.button(mxResources.get('open'), function()
 		{
-			editorUi.imgDlgFileInputElt.click();
+			_buildDlgFileInput().click();
 		});
 
 		btn.className = 'geBtn';

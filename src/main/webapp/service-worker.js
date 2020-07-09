@@ -5,7 +5,7 @@ if (self.workbox) {
   self.workbox.precache.precacheAndRoute([
     {
       "url": `${self.DIAGRAM_APP_ROOT_DIR}js/app.min.js`,
-      "revision": "395dd66db2a8018b42d768c909916518"
+      "revision": "20df3212a8d1bf87f3e6075bb6592ac9"
     },
     {
       "url": `${self.DIAGRAM_APP_ROOT_DIR}js/extensions.min.js`,
