@@ -469,7 +469,7 @@ if (self.workbox) {
     },
     {
       "url": `${self.DIAGRAM_APP_ROOT_DIR}js/PreConfig.js`,
-      "revision": "93cf116a5f5c25754075278e1bb69da2"
+      "revision": "9fa213c324a4182a1cd8e961e23e5c8a"
     },
     {
       "url": `${self.DIAGRAM_APP_ROOT_DIR}js/PostConfig.js`,
