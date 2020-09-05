@@ -12,12 +12,13 @@ window.DRAWIO_CONFIG = { // Replace with your custom draw.io configurations. For
     plugins: [
         (function () {
             var env = urlParams['aaa-env'];
-            console.log('[diagram-app] - Resolving plugin url', env, urlParams);
             switch (env) {
                 case 'PROD':
                     return "https://production.aaaflag.com/resources/diagram-plugin.js?__WB_REVISION__=5cc705a3bd5f81bc808317a7a2656bdb";
                 case 'LOCAL':
                     return "https://itdev-pc.aaaflag.net:82/resources/diagram-plugin.js?__WB_REVISION__=5cc705a3bd5f81bc808317a7a2656bdb";
+                case 'DEVICE':
+                    return "capacitor://localhost/resources/diagram-plugin.js?__WB_REVISION__=5cc705a3bd5f81bc808317a7a2656bdb";
                 default:
                     return "https://production-dev.aaaflag.com/resources/diagram-plugin.js?__WB_REVISION__=5cc705a3bd5f81bc808317a7a2656bdb";
 
