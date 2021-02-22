@@ -25,7 +25,7 @@ if (self.workbox) {
     },
     {
       "url": `${self.DIAGRAM_APP_ROOT_DIR}index.html`,
-      "revision": "18c33f3af16a7c95000d868f1886c7b5"
+      "revision": "118047db2ae0dcb8b8aee7224b2b83f8"
     },
     {
       "url": `${self.DIAGRAM_APP_ROOT_DIR}open.html`,
